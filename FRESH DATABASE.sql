@@ -1,6 +1,4 @@
 
-
--- 2. CREATE DATABASE
 CREATE DATABASE alpha;
 GO
 USE alpha;
