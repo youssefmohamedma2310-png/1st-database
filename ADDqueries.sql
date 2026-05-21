@@ -1,6 +1,6 @@
 use alpha;
 GO
-/*SELECT ticker_symbol FROM Asset WHERE Current_market_price > 50;
+SELECT ticker_symbol FROM Asset WHERE Current_market_price > 50;
 GO
 select SUM(total_balance) as all_money from Client
 ORDER BY SUM(total_balance) ASC;
@@ -37,4 +37,3 @@ INNER JOIN asset on Portfolio_Asset.ticker_symbol =  Asset.Ticker_symbol
 GROUP BY client.First_name,portfolio.total_value,client.Last_name,Portfolio_Asset.ticker_symbol
  HAVING SUM (Portfolio_Asset.quantity * asset.Current_market_price) > 2000
 GO
-/*
