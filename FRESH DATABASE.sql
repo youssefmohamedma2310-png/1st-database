@@ -84,8 +84,9 @@ CREATE TABLE Transaction_Table (
     amount DECIMAL(10,2) NOT NULL,
     transaction_date DATETIME2 NOT NULL DEFAULT GETDATE(),
     portfolio_id INT NOT NULL,
+    ticker_symbol VARCHAR(50) NOT NULL,
     FOREIGN KEY (portfolio_id) REFERENCES Portfolio(portfolio_id),
-    
+    FOREIGN KEY (ticker_symbol) REFERENCES Asset(Ticker_symbol);
     CONSTRAINT CK_Trans_Type CHECK (transaction_type IN ('BUY', 'SELL', 'DEPOSIT', 'WITHDRAWAL')),
     CONSTRAINT CK_Trans_Amount CHECK (amount > 0)
 );
