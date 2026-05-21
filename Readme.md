@@ -211,6 +211,15 @@ ADD Asset_name VARCHAR(255);
 - [ ] **Raised Entry Requirement** — Increase minimum account balance from $1,500 to $10,000
 - [ ] **Web Interface** — Interactive HTML dashboard with real-time SQL query preview
 
+⚠️ Things to Improve
+total_value in Portfolio is a derived column. It stores a value that can be recalculated from Portfolio_Asset × Asset.Current_market_price. Storing it creates a consistency risk
+
+No created_at / updated_at audit columns on Client or Advisor. For a system tracking financial activity, knowing when a record was last modified is valuable.
+
+Transaction_Table has no ticker_symbol or asset_id FK. A BUY or SELL transaction has no link to which asset was bought/sold — only the portfolio it belongs to. That's a significant gap for an audit log.
+
+Advisor has a single specialization column. If advisors can have multiple specializations, this hits the same multi-value problem that Phone_Client solves. Worth considering a Advisor_Specialization table.
+
 ---
 
 ## 👤 Author
