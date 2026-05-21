@@ -1,16 +1,4 @@
--- ==========================================
--- MASTER DATABASE SCRIPT: ALPHA
--- ==========================================
 
--- 1. CLEANUP: Drop the database if it already exists to start fresh
-USE master;
-GO
-IF EXISTS (SELECT * FROM sys.databases WHERE name = 'alpha')
-BEGIN
-    ALTER DATABASE alpha SET SINGLE_USER WITH ROLLBACK IMMEDIATE; -- Kicks out active connections
-    DROP DATABASE alpha;
-END
-GO
 
 -- 2. CREATE DATABASE
 CREATE DATABASE alpha;
