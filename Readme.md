@@ -193,23 +193,6 @@ DELETE FROM Asset
 WHERE ticker_symbol = 'PLTR';
 ```
 
-### Reset & Reseed Tables (Development Only)
-
-```sql
-DELETE FROM Transaction_Table;
-DELETE FROM Portfolio_Asset;
-DELETE FROM Portfolio;
-DELETE FROM Phone_Client;
-DELETE FROM Client;
-DELETE FROM Asset;
-DELETE FROM Advisor;
-GO
-DBCC CHECKIDENT ('Transaction_Table', RESEED, 0);
-DBCC CHECKIDENT ('Portfolio', RESEED, 0);
-DBCC CHECKIDENT ('Client', RESEED, 0);
-DBCC CHECKIDENT ('Advisor', RESEED, 0);
-GO
-```
 
 ### Schema Evolution — Add Audit Column
 
