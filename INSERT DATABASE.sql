@@ -1,7 +1,3 @@
--- ============================================================
---  ALPHA INVESTMENT DATABASE — FULL INSERT SCRIPT
---  10 Clients | 10 Advisors | 33 Assets | Tiered Portfolios
--- ============================================================
 
 USE alpha;
 GO
@@ -32,10 +28,7 @@ GO
 
 -- ============================================================
 -- SECTION 2: CLIENTS (10 clients)
--- ============================================================
--- FIX 1: Original email typo 'Ahmedshaanan' corrected to 'ahmedshabaan'
--- FIX 2: Ahmed Hassan had broken syntax (extra comma + invalid email '@') — fixed
--- 4 new clients added to reach 10
+-- ===========================================================
 
 INSERT INTO Client (Email, Total_balance, First_name, Last_name) VALUES
 ('youssefmohamed@gmail.com',    15000.00,  'Youssef',  'Mohamed'),
@@ -74,8 +67,7 @@ GO
 -- SECTION 4: ASSETS (33 stocks from watchlist file)
 -- ============================================================
 -- NOTE: CRST original price $0.0226 rounded to $0.02 (DECIMAL(10,2) limit)
--- TIP: For 4 decimal precision run:
---      ALTER TABLE Asset ALTER COLUMN Current_market_price DECIMAL(10,4)
+
 
 -- EGX Stocks (20 Egyptian Exchange stocks)
 INSERT INTO Asset (Ticker_symbol, Asset_name, Current_market_price) VALUES
